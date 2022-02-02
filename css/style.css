@@ -1,0 +1,208 @@
+/* GENERALS */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: 'Netflix';
+    src: url('../assets/font/Avenir.ttc');
+    font-weight: 400;
+    font-style: normal;
+}
+body{
+    font-size: 62.5%;
+    background-color: black;
+    color: white;
+    font-family: 'Netflix';
+}
+/* Desaparece el ScrollBar */
+::-webkit-scrollbar {
+    display: none;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+/* Header */
+.header{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 13px;
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 2;
+    /* Header con gradiente */
+    background-image: linear-gradient(to bottom, black 0%, rgba(0,0,0,.4));
+}
+.header img{
+    padding: 15px;
+    width: 100px;
+}
+.navigation{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+}
+.navigation-item{
+    font-size: .9rem;
+    line-height: 1rem;
+    margin: 0 20px;
+}
+
+/* Front Page */
+.featured{
+    margin-top: -35px;
+    width: 100%;
+    height: auto;
+}
+.featured .front-page{
+    width: 100%;
+    /* Corta la imagen visualizado en su 100% */
+    clip-path: inset(0 0 69px 0);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.tags{
+    margin-top: -150px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+.tag{
+    margin-left: 10px;
+    font-size: .7rem;
+    line-height: 1rem;
+}
+.container-buttons{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-image: linear-gradient(to top, black 60%, transparent 100% );
+    position: relative;
+    z-index: 2;
+    padding: 5px;
+}
+.buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+}
+.buttons button{
+    border: none;
+}
+.buttons .btn-secondary{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-size: .7rem;
+    font-weight: 600;
+    background-color: transparent;
+}
+.buttons .btn-secondary img{
+    align-self: center;
+}
+.buttons .btn-play{
+    background-color: white;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    color: black;
+    font-size: .7rem;
+    font-weight: 600;
+    height: 29px;
+    border-radius: 3px;
+}
+
+/* Main Content */
+.section-main{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    background-color: black;
+}
+.lists{
+    display: flex;
+    flex-direction: column;
+}
+.lists h2{
+    margin: 30px 0 10px 15px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 2rem;
+}
+.container-movieList{
+    display: flex;
+    width: 100%;
+    overflow-x:scroll;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+}
+.element{
+    width: 96px;
+    height: 144px;
+    margin: 10px;
+    border-radius: 10px;
+    scroll-snap-align: center;
+}
+.container-img img{
+    width: 96px;
+    height: 144px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Menu */
+.menu-section{
+    /* Fija en la zona de abajo */
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    padding: 10px 0;
+    background-color: black;
+}
+.menu-section .menu-items{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer ;
+}
+.menu-item a{
+    color: grey;
+    font-size: .8rem;
+}
+/* Cambiando color a iconos svg */
+svg path{
+    fill:grey;
+}
+/* Al darle hover se modifican dos elementos a la vez */
+.menu-item:hover :is(path, a){
+    fill: white;
+    color: white;
+}
