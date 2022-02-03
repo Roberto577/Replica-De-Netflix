@@ -206,3 +206,14 @@ svg path{
     fill: white;
     color: white;
 }
+
+/* Footer */
+footer{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+footer p{
+    text-align: center;
+    font-size: .8rem;
+}
